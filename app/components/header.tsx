@@ -2,15 +2,23 @@
 import Link from "next/link";
 import React, { use } from "react";
 import { useEffect, useRef, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 import { useInView } from "react-intersection-observer";
 
 export const Header: React.FC = () => { 
- const transition = {
-    ease: [0, 0, 0.58, 1] as [number, number, number, number],
-    duration: 0.5
-  };
+   const [isOpen, setIsOpen] = useState(false)
+    const menuVariants = {
+    hidden: { opacity: 0, filter: "blur(10px)"},
+    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.3,    // ждем, пока меню откроется
+    staggerChildren: 0.1, } },
+    exit: { opacity: 0, filter: "blur(10px)"},
+    
+  }
+  const childVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
    const controls = useAnimation();
       const [ref, inView] = useInView({
         triggerOnce: true,   // Animate only the first time it appears
@@ -26,33 +34,19 @@ export const Header: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
    const mobileNavRef = useRef<HTMLDivElement>(null);
 const handleMenuToggle = () => {
-    if (mobileNavRef.current) {
-      mobileNavRef.current.classList.remove('hidden');
-      mobileNavRef.current.classList.add('flex');
-      
-      
-
-      // Запрещаем прокрутку страницы: работаем с html-элементом
-      
-    }
-  };
-
-  // Функция для закрытия меню
-  const handleMenuClose = () => {
-    if (mobileNavRef.current) {
-      
-      
-    }
+    setIsOpen(true)
+    // Блокируем прокрутку
     
+  }
 
-    // По завершении анимации (500 мс) скрываем меню
+  const handleMenuClose = () => {
+    setIsOpen(false)
+    // Разрешаем прокрутку после анимации (нужно подождать)
     setTimeout(() => {
-      if (mobileNavRef.current) {
-        mobileNavRef.current.classList.add('hidden');
-        mobileNavRef.current.classList.remove('flex');
-      }
-    }, 0);
-  };
+      
+    }, 300) // должно совпадать с transition.duration
+  }
+
     useEffect(() => { 
 const handleScroll = () => { 
     const scroll = window.scroll(); // Получаем текущую позицию прокрутки
@@ -74,9 +68,20 @@ const handleScroll = () => {
     }, []);
     return (
          <>
+         <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="menu"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+            className="w-full flex h-screen z-11 bg-[rgb(251,251,239)] flex-row fixed "
+            
+          >
          
-         <div className="hidden w-full h-screen z-11 bg-[rgb(251,251,239)] flex-row fixed  "
-         ref={mobileNavRef}>
+        
           <div
         
         className={`w-full fixed z-10 px-[20px] py-[20px] transition duration-500 antialiased 
@@ -156,28 +161,40 @@ const handleScroll = () => {
       </div>
 <div className="w-1/2  hidden lg:flex relative">
 <img src="/bg-menu.png" className="w-full h-full object-cover"></img>
-<div className="absolute  pb-[40px] bottom-0 flex  text-[rgb(228,224,212)] items-center justify-center  w-full">
+<div className="absolute  pb-[40px] bottom-0 flex  text-[rgb(228,224,212)] items-center justify-center  w-full "
+>
   <p className="prata5 text-[16px] max-w-[440px] text-center">Minerals left by volcanic ash, pure water flowing through layered earth, and wild botanicals nurtured in silence—each element is a product of time and nature’s refinement.</p>
 </div>
 </div>
 <div className="lg:w-1/2 w-full h-full relative text-[rgb(35,25,22)]  flex items-center justify-center">
-<div className="flex flex-col md:text-[54px] text-[40px] uppercase justify-center   text-center prata4">
+<div className="flex flex-col md:text-[54px] text-[40px] uppercase justify-center   text-center prata4 select-none ">
 
-<Link href="/shop" className="block lg:hidden">
+<motion.div
+variants={childVariants} 
+><Link href="/shop" className="block lg:hidden cursor-pointer">
 shop
-</Link>
-<Link href="/shop" className="block lg:hidden">
+</Link></motion.div>
+<motion.div
+variants={childVariants} 
+><Link href="/shop" className="block lg:hidden cursor-pointer">
 journal
-</Link>
-<Link href="/shop" className="block lg:hidden">
+</Link></motion.div>
+<motion.div
+variants={childVariants} 
+><Link href="/shop" className="block lg:hidden cursor-pointer">
 store
-</Link>
-<Link href="/shop" className="block lg:hidden">
+</Link></motion.div>
+<motion.div
+variants={childVariants} 
+><Link href="/shop" className="block lg:hidden cursor-pointer">
 about
-</Link>
+</Link></motion.div>
+
+<motion.div
+variants={childVariants}>
 <div
-          className="group relative lg:inline-block hidden overflow-hidden"
-          style={{ height: '54.8px', lineHeight: '57.8px' }}
+          className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
+          style={{ height: '45.8px', lineHeight: '56.8px' }}
         >
           {/* Верхний текст: изначально на месте, при hover поднимается вверх */}
           <div className="transition-transform duration-500 ease-in-out transform group-hover:-translate-y-full">
@@ -188,9 +205,12 @@ about
             shop
           </div>
         </div>
+        </motion.div>
+        <motion.div
+variants={childVariants}>
         <div
-          className="group relative lg:inline-block hidden overflow-hidden"
-          style={{ height: '54.8px', lineHeight: '57.8px' }}
+          className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
+          style={{ height: '45.8px', lineHeight: '56.8px' }}
         >
           {/* Верхний текст: изначально на месте, при hover поднимается вверх */}
           <div className="transition-transform duration-500 ease-in-out transform group-hover:-translate-y-full">
@@ -201,9 +221,12 @@ about
             journal
           </div>
         </div>
+        </motion.div>
+        <motion.div
+variants={childVariants}>
         <div
-          className="group relative lg:inline-block hidden overflow-hidden"
-          style={{ height: '54.8px', lineHeight: '57.8px' }}
+          className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
+          style={{ height: '47.8px', lineHeight: '56.8px' }}
         >
           {/* Верхний текст: изначально на месте, при hover поднимается вверх */}
           <div className="transition-transform duration-500 ease-in-out transform group-hover:-translate-y-full">
@@ -214,9 +237,12 @@ about
             store
           </div>
         </div>
+        </motion.div>
+        <motion.div
+variants={childVariants}>
         <div
-          className="group relative lg:inline-block hidden overflow-hidden"
-          style={{ height: '54.8px', lineHeight: '57.8px' }}
+          className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
+          style={{ height: '47.8px', lineHeight: '57.8px' }}
         >
           {/* Верхний текст: изначально на месте, при hover поднимается вверх */}
           <div className="transition-transform duration-500 ease-in-out transform group-hover:-translate-y-full">
@@ -227,6 +253,7 @@ about
             about
           </div>
         </div>
+        </motion.div>
         
 
 
@@ -238,7 +265,10 @@ about
 <h1 className="bdog md:text-xs text-[11px]">© ORLANCE, 2025</h1>
 </div>
 </div>
-         </div>
+         
+         </motion.div>
+        )}
+        </AnimatePresence>
          
       {/* Мобильная версия хедера: до lg */}
       <div
@@ -302,29 +332,29 @@ about
           />
           <nav className="text-xs flex flex-row gap-8 uppercase">
             <a
-              className={`cursor-pointer bdog ${
-                scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
+              className={`cursor-pointer bdog  ${
+                scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               shop
             </a>
             <a
-              className={`cursor-pointer bdog ${
-                scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
+              className={`cursor-pointer bdog  ${
+               scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               journal
             </a>
             <a
-              className={`cursor-pointer bdog ${
-                scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
+              className={`cursor-pointer bdog  ${
+                scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               store
             </a>
             <a
-              className={`cursor-pointer bdog ${
-                scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
+              className={`cursor-pointer bdog  ${
+                scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               about
@@ -355,11 +385,13 @@ about
                   scrolled ? 'border-[rgb(35,25,22)]' : 'border-[rgb(228,224,212)]'
                 }`}
               >
-                <img
+                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill={scrolled ? '#232522' : '#E4E0D4'}><path d="M160-360v-80h640v80H160Zm0-160v-80h640v80H160Z"/></svg>
+                {/* Иконка меню <img
                   src="https://cdn.prod.website-files.com/6822f8342a36484c66267e9a/6835a60e41ac5ec8f3534042_menu.svg"
                   alt="Menu Icon"
                   className="h-[12px] w-[12px]"
                 />
+                */}
               </div>
             </div>
           </div>

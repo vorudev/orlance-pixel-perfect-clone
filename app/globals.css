@@ -128,3 +128,41 @@ line-height: 54.8px;
   line-height: 24px ;
 
 }
+.underline-hover {
+  position: relative;
+  text-decoration: none; /* убираем стандартное подчеркивание */
+}
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* отступ под текстом, можно менять */
+  height: 1px; /* толщина линии */
+  width: 0;
+  background-color: black; /* цвет линии */
+  transition: width 0.3s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+.underline-hover-white {
+  position: relative; /* цвет текста, можно менять */
+  text-decoration: none; /* убираем стандартное подчеркивание */
+}
+
+.underline-hover-white::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* отступ под текстом, можно менять */
+  height: 1px; /* толщина линии */
+  width: 0;
+  background-color: white; /* цвет линии */
+  transition: width 0.3s ease;
+}
+
+.underline-hover-white:hover::after {
+  width: 100%;
+}
