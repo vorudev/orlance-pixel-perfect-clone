@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import React from 'react';
 import { Geist, Geist_Mono,  } from "next/font/google";
+import { CartProvider } from './contexts/CartContext';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,12 +24,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body
         className={`antialiased`}
       >
-        {children}
+       <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

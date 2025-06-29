@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 export const Section4: React.FC = () => {
    const controls = useAnimation();
@@ -33,11 +34,11 @@ export const Section4: React.FC = () => {
           
 <Link className="lg:flex  hidden  w-1/2  flex-col gap-[20px] items-center justify-between" href="/item4">
 <h1 className="bdog text-xs text-[rgb(35,25,22)] mt-[48px] uppercase  ">recommend</h1>
-<div className="flex flex-col items-center ">
+<div className="flex flex-col items-center lg:gap-[20px]">
 <img src="/item4.png " className="h-[460px] w-auto"></img>
 <div className="flex flex-col items-center gap-[16px] ">
-<h1 className="prata2 text-[16px] text-center uppercase">aura veil facial cream</h1>
-<p className="text-xs bdog ">$ 220.00 USD</p>
+<h1 className="prata1-1 text-[16px] text-center uppercase">aura veil facial cream</h1>
+<p className="text-xs bdog2 ">$ 220.00 USD</p>
 </div>
 </div>
 <div className="w-full py-[20px] group hover:bg-[rgb(35,25,22)] hover:text-[rgb(251,251,239)] transition-colors duration-300 ease-in-out flex items-center justify-center cursor-pointer">
@@ -57,10 +58,10 @@ export const Section4: React.FC = () => {
 
  <div className="lg:w-1/2 flex relative  w-full   justify-between">
 <div className="absolute hidden z-2 text-[rgb(35,25,22)] justify-between items-center lg:flex flex-col h-full w-full ">
-<h1 className="bdog text-xs text-[rgb(251,251,239)] mt-[48px]  ">FORMULA</h1>
-<p className="prata1 text-center text-[rgb(251,251,239)] text-[16px] mb-[48px]">Formed from volcanic ash, deep-layered spring<br></br> water, and wild herbs, our formula restores the<br></br> skin through purification, hydration, and calm — <br></br>in seamless harmony.</p>
+<h1 className="bdog2 text-xs text-[rgb(251,251,239)] mt-[48px]  ">FORMULA</h1>
+<p className="prata1-1 text-center text-[rgb(228,224,212)] text-[16px] mb-[48px]">Formed from volcanic ash, deep-layered spring<br></br> water, and wild herbs, our formula restores the<br></br> skin through purification, hydration, and calm — <br></br>in seamless harmony.</p>
 </div>
-<div className=" w-full"><img src="item4-hover.png" className="h-auto aspect-[1/1.15] lg:aspect-[1/1.35] w-full object-cover"></img></div>
+<div className="relative aspect-[1/1.15] lg:aspect-[1/1.35] w-full"><Image alt="" src="/item4-hover.png" fill className="h-auto aspect-[1/1.15] lg:aspect-[1/1.35] w-full object-cover"></Image></div>
 
 </div>
 

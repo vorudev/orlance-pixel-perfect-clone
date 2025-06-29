@@ -6,26 +6,26 @@ export const Footer: React.FC = () => {
     <div className="flex-col flex gap-[48px] lg:gap-0 lg:flex-row  w-full">
 <div className="flex flex-col gap-[24px] lg:w-1/2">
 <img src="/brown.svg" className="w-[112px] lg:w-[134px] h-auto"></img>
-<p className="prata1 text-[14px] md:text-[15px] lg:text-[16px] max-w-[360px] ">ORLANCE awakens the senses through a refined skincare ritual.</p>
+<p className="prata1-2 text-[14px] md:text-[15px] lg:text-[16px] max-w-[360px] ">ORLANCE awakens the senses through a refined skincare ritual.</p>
 </div>
 <div className="flex flex-row w-full lg:w-1/2 ">
-<div className="flex-col flex w-1/2 gap-[12px]">
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">shop</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px]  uppercase">journal</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">about</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">store</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">shipping & returns</Link>
+<div className="flex-col flex w-1/2 gap-[12px] lg:gap-[16px]">
+<Link href='/shop' className="bdog2 text-[11px] md:text-[12px] uppercase">shop</Link>
+<Link href='/journal' className="bdog2 text-[11px] md:text-[12px]  uppercase">journal</Link>
+<Link href='/about' className="bdog2 text-[11px] md:text-[12px] uppercase">about</Link>
+<Link href='/store' className="bdog2 text-[11px] md:text-[12px] uppercase">store</Link>
+<Link href='' className="bdog2 text-[11px] md:text-[12px] uppercase">shipping & returns</Link>
 </div>
-<div className="flex-col flex w-1/2 gap-[12px]">
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">instagram</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">contact</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">licence</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">changelog</Link>
-<Link href='' className="bdog text-[11px] md:text-[12px] uppercase">design system</Link>
+<div className="flex-col flex w-1/2 gap-[12px] lg:gap-[16px]">
+<Link href='' className="bdog2 text-[11px] md:text-[12px] uppercase">instagram</Link>
+<Link href='' className="bdog2 text-[11px] md:text-[12px] uppercase">contact</Link>
+<Link href='' className="bdog2 text-[11px] md:text-[12px] uppercase">licence</Link>
+<Link href='' className="bdog2 text-[11px] md:text-[12px] uppercase">changelog</Link>
+<Link href='' className="bdog2 text-[11px] md:text-[12px] uppercase">design system</Link>
 </div>
 </div>
 </div>
-<h1 className="uppercase bdog text-[11px] md:text-[12px]">© ORLANCE 2025, all right reserved</h1>
+<h1 className="uppercase bdog2 text-[11px] md:text-[12px]">© ORLANCE 2025, all right reserved</h1>
 </div>
     )
  } 

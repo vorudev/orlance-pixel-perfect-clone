@@ -52,7 +52,7 @@ const renderSectionContent = (sectionId: number) => {
         natural balance.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[48px]">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[20px] lg:mb-[48px] ">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -124,7 +124,7 @@ const renderSectionContent = (sectionId: number) => {
         Sourced from untouched highlands and forests, these wild herbs bring raw vitality, soothing the skin and protecting it from external stressors.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[48px]">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0  mb-[20px] lg:mb-[48px]">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -196,7 +196,7 @@ const renderSectionContent = (sectionId: number) => {
         Filtered slowly through layers of earth, this spring water is naturally purified over centuries. It deeply hydrates and calms the skin with nature’s flow.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[48px]">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[20px] lg:mb-[48px] ">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -270,7 +270,7 @@ const renderSectionContent = (sectionId: number) => {
         natural balance.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[48px]">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[20px] lg:mb-[48px]">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -325,7 +325,7 @@ const renderSectionContent = (sectionId: number) => {
            
 };  }
     return ( 
-        <div>
+        <div className="bg-[rgb(251,251,239)] ">
         <motion.div
       ref={ref}
       initial="hidden"

@@ -3,10 +3,17 @@ import Link from "next/link";
 import React, { use } from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
-
+import { useScrolled } from "./functions/scroll";
 import { useInView } from "react-intersection-observer";
-
+import CartItemComponent from "./cartprop";
+import { useCart } from '../contexts/CartContext';
 export const Header: React.FC = () => { 
+   const scrolled = useScrolled(100);
+      const [isVisible, setIsVisible] = useState(false);
+   const { cart, removeFromCart, clearCart, updateQuantity, distinctItems } = useCart();
+       
+        
+     const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
    const [isOpen, setIsOpen] = useState(false)
     const menuVariants = {
     hidden: { opacity: 0, filter: "blur(10px)"},
@@ -19,6 +26,9 @@ export const Header: React.FC = () => {
   hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
+ const handleToggleCart = () => {
+    setIsVisible(prev => !prev);
+  };
    const controls = useAnimation();
       const [ref, inView] = useInView({
         triggerOnce: true,   // Animate only the first time it appears
@@ -31,7 +41,7 @@ export const Header: React.FC = () => {
         }
       }, [controls, inView]);
     const headerRef = useRef<HTMLDivElement>(null);
-    const [scrolled, setScrolled] = useState(false);
+    
    const mobileNavRef = useRef<HTMLDivElement>(null);
 const handleMenuToggle = () => {
     setIsOpen(true)
@@ -47,25 +57,7 @@ const handleMenuToggle = () => {
     }, 300) // должно совпадать с transition.duration
   }
 
-    useEffect(() => { 
-const handleScroll = () => { 
-    const scroll = window.scroll(); // Получаем текущую позицию прокрутки
-    if (window.scrollY > 100) {
-        console.log('Scrolled more than 100px');
-        setScrolled(true);
-    } else {
-        setScrolled(false);
-    } };
-
-     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      // Очищаем слушатель при размонтировании компонента
-      window.removeEventListener('scroll', handleScroll);
-    };
-
-
-    }, []);
+   
     return (
          <>
          <AnimatePresence>
@@ -123,22 +115,24 @@ const handleScroll = () => {
                     leading-[20px]  hidden lg:flex`}
       >
         {/* Левая колонка с логотипом и навигацией */}
-        <div className="w-1/2 flex items-center gap-20">
-          <img
+        <div className="w-1/2 flex items-center gap-20 ">
+        <Link href='/' className="cursor-pointer">
+           <img
             src='/window.svg'
             alt="Логотип"
-            className="h-6 w-auto"
+            className="h-6 w-auto cursor-pointer"
           />
+          </Link>
           
         </div>
         {/* Правая колонка с корзиной и кнопкой меню */}
         <div className="w-1/2 flex justify-end items-center">
           <div className="flex items-center gap-8 uppercase text-xs bdog">
             
-            <div className="flex items-center gap-2"
+            <div className="flex items-center  cursor-pointer gap-2"
             onClick={handleMenuClose}>
               <a
-                className={`cursor-pointer bdog 
+                className={` bdog 
                    text-[rgb(35,25,22)]
                 `}
               >
@@ -176,12 +170,12 @@ shop
 </Link></motion.div>
 <motion.div
 variants={childVariants} 
-><Link href="/shop" className="block lg:hidden cursor-pointer">
+><Link href="/journal" className="block lg:hidden cursor-pointer">
 journal
 </Link></motion.div>
 <motion.div
 variants={childVariants} 
-><Link href="/shop" className="block lg:hidden cursor-pointer">
+><Link href="/store" className="block lg:hidden cursor-pointer">
 store
 </Link></motion.div>
 <motion.div
@@ -192,7 +186,7 @@ about
 
 <motion.div
 variants={childVariants}>
-<div
+<Link href="/shop"
           className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
           style={{ height: '45.8px', lineHeight: '56.8px' }}
         >
@@ -204,11 +198,11 @@ variants={childVariants}>
           <div className="transition-transform duration-500 ease-in-out transform translate-y-full absolute inset-0 group-hover:translate-y-0">
             shop
           </div>
-        </div>
+        </Link>
         </motion.div>
         <motion.div
 variants={childVariants}>
-        <div
+        <Link href="/journal"
           className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
           style={{ height: '45.8px', lineHeight: '56.8px' }}
         >
@@ -220,11 +214,11 @@ variants={childVariants}>
           <div className="transition-transform duration-500 ease-in-out transform translate-y-full absolute inset-0 group-hover:translate-y-0">
             journal
           </div>
-        </div>
+        </Link>
         </motion.div>
         <motion.div
 variants={childVariants}>
-        <div
+        <Link href="/store"
           className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
           style={{ height: '47.8px', lineHeight: '56.8px' }}
         >
@@ -236,11 +230,11 @@ variants={childVariants}>
           <div className="transition-transform duration-500 ease-in-out transform translate-y-full absolute inset-0 group-hover:translate-y-0">
             store
           </div>
-        </div>
+        </Link>
         </motion.div>
         <motion.div
 variants={childVariants}>
-        <div
+        <Link href="/about"
           className="group relative lg:inline-block hidden overflow-hidden cursor-pointer"
           style={{ height: '47.8px', lineHeight: '57.8px' }}
         >
@@ -252,7 +246,7 @@ variants={childVariants}>
           <div className="transition-transform duration-500 ease-in-out transform translate-y-full absolute inset-0 group-hover:translate-y-0">
             about
           </div>
-        </div>
+        </Link>
         </motion.div>
         
 
@@ -269,7 +263,49 @@ variants={childVariants}>
          </motion.div>
         )}
         </AnimatePresence>
+         <div className={`fixed z-15  w-full h-screen  ${isVisible ? 'fixed' : 'hidden'}`}>
+                     <div className="w-full h-full bg-black/50 flex justify-end" onClick={handleToggleCart}>
+         <div className=" lg:w-[480px]  w-full h-full bg-[rgb(251,251,239)] text-[rgb(35,25,22)] " onClick={(e) => e.stopPropagation()}>
+         <div className="pb-[16px] lg:px-[16px] px-[20px] h-full relative ">
+             <div className="lg:pt-[32px] pb-[16px] pt-[25px] w-full flex items-center justify-between md:text-[12px] text-[11px] bdog uppercase">
+                 <p>cart</p>
+                 <button onClick={handleToggleCart} className="md:text-[12px] text-[11px] bdog uppercase cursor-pointer">close</button>
          
+             </div>
+              
+               {cart.length === 0 ? (
+                 <div className="w-full h-full flex items-center justify-center">
+                 <p className="bdog md:text-[12px] text-[11px] uppercase">cart is empty</p>
+                 </div>
+               ) : (
+              
+                 <ul style={{ listStyle: 'none', padding: 0 }}  >
+                   {cart.map((item) => (
+                     <CartItemComponent key={item.id} item={item} />
+                   ))}
+                 </ul>
+               )}
+               {cart.length > 0 && (
+                 <div className="absolute bottom-0 lg:w-[480px] w-full pb-[16px] ">
+                     <div className="flex-col flex gap-[16px] lg:w-[480px] pr-[32px] ">
+                   <div className="w-full flex flex-row justify-between">
+                     <h2 className="text-[12px] uppercase bdog">subtotal</h2>
+                     <h2 className="text-[12px] uppercase bdog">$ {total.toFixed(2)} USD</h2>
+                     </div>
+                   <button 
+                   className="bg-[rgb(35,25,22)] text-[rgb(251,251,239)] w-full h-[48px] bdog text-[12px] uppercase"
+                   onClick={clearCart}>Clear Cart</button>
+                     </div>
+                 </div>
+                 
+               )}
+              
+             </div>
+                     </div>
+                     </div>
+                     
+         
+                  </div>
       {/* Мобильная версия хедера: до lg */}
       <div
         
@@ -278,7 +314,7 @@ variants={childVariants}>
       >
         <div className="flex items-center justify-between">
           {/* Кнопка меню слева */}
-          <div className="flex items-center justify-center gap-2" 
+          <div className="flex items-center cursor-pointer  justify-center gap-2" 
           onClick={handleMenuToggle}>
               
               <div
@@ -286,14 +322,10 @@ variants={childVariants}>
                   scrolled ? 'border-[rgb(35,25,22)]' : 'border-[rgb(228,224,212)]'
                 }`}
               >
-                <img
-                  src="https://cdn.prod.website-files.com/6822f8342a36484c66267e9a/6835a60e41ac5ec8f3534042_menu.svg"
-                  alt="Menu Icon"
-                  className="h-[12px] w-[12px]"
-                />
+                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill={scrolled ? '#232522' : '#E4E0D4'}><path d="M160-360v-80h640v80H160Zm0-160v-80h640v80H160Z"/></svg>
               </div>
               <a
-                className={`cursor-pointer bdog uppercase md:text-xs text-[11px] ${
+                className={`bdog2 uppercase md:text-xs text-[11px] ${
                   scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
                 }`}
               >
@@ -301,18 +333,22 @@ variants={childVariants}>
               </a>
             </div>
           {/* Логотип по центру */}
+          <Link href="/" className="h-[20px] w-auto absolute left-1/2 transform -translate-x-1/2">
           <img
             src={scrolled ? '/brown.svg' : '/window.svg'}
             alt="Логотип"
-            className="h-[20px] w-auto absolute left-1/2 transform -translate-x-1/2"
+            className="h-[20px] w-auto"
           />
+          </Link>
           {/* Корзина справа */}
-          <button
-            className={`cursor-pointer md:text-xs text-[11px] bdog uppercase ${
+          <button onClick={handleToggleCart}
+            className={`cursor-pointer md:text-xs text-[11px] bdog2 uppercase ${
               scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
             }`}
           >
-            cart
+            cart <span className="ml-[4px]">{distinctItems > 0 && 
+              `${distinctItems}`
+              } </span>
           </button>
         </div>
       </div>
@@ -325,56 +361,60 @@ variants={childVariants}>
       >
         {/* Левая колонка с логотипом и навигацией */}
         <div className="w-1/2 flex items-center gap-20">
+        <Link href="/" className="cursor-pointer">
           <img
             src={scrolled ? '/brown.svg' : '/window.svg'}
             alt="Логотип"
-            className="h-6 w-auto"
+            className="h-6 w-auto "
           />
+          </Link>
           <nav className="text-xs flex flex-row gap-8 uppercase">
-            <a
-              className={`cursor-pointer bdog  ${
+            <Link href="/shop"
+              className={`cursor-pointer bdog2  ${
                 scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               shop
-            </a>
-            <a
-              className={`cursor-pointer bdog  ${
+            </Link>
+            <Link href="/journal"
+              className={`cursor-pointer bdog2  ${
                scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               journal
-            </a>
-            <a
-              className={`cursor-pointer bdog  ${
+            </Link>
+            <Link href="/store"
+              className={`cursor-pointer bdog2  ${
                 scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               store
-            </a>
-            <a
-              className={`cursor-pointer bdog  ${
+            </Link>
+            <Link href="/about"
+              className={`cursor-pointer bdog2  ${
                 scrolled ? 'text-[rgb(35,25,22)] underline-hover ' : 'text-[rgb(228,224,212)] underline-hover-white'
               }`}
             >
               about
-            </a>
+            </Link>
           </nav>
         </div>
         {/* Правая колонка с корзиной и кнопкой меню */}
         <div className="w-1/2 flex justify-end items-center">
           <div className="flex items-center gap-8 uppercase text-xs bdog">
-            <a
-              className={`cursor-pointer bdog ${
+            <button onClick={handleToggleCart}
+              className={`cursor-pointer uppercase  bdog2 ${
                 scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
               }`}
             >
-              cart
-            </a>
-            <div className="flex items-center gap-2"
+              cart<span className="ml-[4px]">{distinctItems > 0 && 
+              `${distinctItems}`
+              } </span>
+            </button>
+            <div className="flex items-center cursor-pointer gap-2"
             onClick={handleMenuToggle}>
               <a
-                className={`cursor-pointer bdog ${
+                className={` bdog2 ${
                   scrolled ? 'text-[rgb(35,25,22)]' : 'text-[rgb(228,224,212)]'
                 }`}
               >

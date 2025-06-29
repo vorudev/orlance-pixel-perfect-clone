@@ -3,6 +3,8 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+import Link from "next/link";
 
 export const Section5: React.FC = () => { 
     const controls = useAnimation();
@@ -35,7 +37,7 @@ export const Section5: React.FC = () => {
 >
     A forgotten place, reawakened.
 </h1>
-<div className="uppercase lg:text-xs text-[11px] bdog flex-row flex items-center justify-start gap-2 cursor-pointer  group">
+<Link href="/journal" className="uppercase md:text-xs text-[11px] bdog2 flex-row flex items-center justify-start gap-2 cursor-pointer  group">
     VIEW more <div className={`w-[24px] h-[24px]  items-center  justify-center  border  rounded-full border-[rgb(35,25,22)] flex overflow-hidden cursor-pointer` }> 
 <span className="inline-block transition-transform translate-x-1.5 duration-300 ease-in-out text-center group-hover:translate-x-5.5 scale-110 ">
     →
@@ -43,18 +45,22 @@ export const Section5: React.FC = () => {
   <span className="inline-block text-center -translate-x-5.5 transition-transform duration-300 ease-in-out group-hover:-translate-x-1.5 group-hover:opacity-100 scale-110 ">
     →
   </span></div> 
-</div>
+</Link>
 </div>
 <div className="lg:w-1/2 mt-[48px] lg:mt-0 w-full">
-<p className="prata1 lg:text-[16px] text-[14px] max-w-[380px] md:max-w-[420px] md:text-[15px]">Inspired by the sacred temple of Arca, ORLANCE reimagines skincare through earth-born formulas.</p>
+<p className="prata1-2 lg:text-[16px] text-[14px] max-w-[380px] md:max-w-[420px] md:text-[15px]">Inspired by the sacred temple of Arca, ORLANCE reimagines skincare through earth-born formulas.</p>
 </div>
                 </div>
                 
                 <div className="grid lg:grid-cols-4  grid-cols-2 gap-[8px] lg:gap-[16px] ">
-<div className="overflow-hidden"><img src="/grid1.png" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer "></img></div>
-<div className="overflow-hidden"><img src="/grid2.png" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer"></img></div>
-<div className="overflow-hidden"><img src="/grid3.jpg" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer"></img></div>
-<div className="overflow-hidden"><img src="/grid4.png" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer"></img></div>
+<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative  "><img src="/grid1web.webp"  loading="lazy" alt="" className="aspect-square object-cover will-change-transform
+ hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
+<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative"><img  alt="" loading="lazy" src="/grid2web.webp" className="aspect-square object-cover will-change-transform
+hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
+<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative"><img src="/grid3.jpg" loading="lazy"  alt="" className="aspect-square object-cover will-change-transform
+hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
+<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative"><img  alt="" src="/grid4web.webp" loading="lazy" className="aspect-square object-cover will-change-transform
+hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
                 </div>
                 </div>
                 

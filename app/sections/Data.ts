@@ -4,7 +4,7 @@ export const cardsData = [
         price: "$ 140.00", 
         image: "/item1.png",
         bgImage: "/item1-hover.png",
-        link: "/products/lumen-toning-serum",
+        link: "/product/lumen-toning-serum",
 
 
     },
@@ -13,20 +13,20 @@ export const cardsData = [
         price: "$ 140.00", 
         image: "/item2.png",
         bgImage: "/item2-hover.png",
-        link: "/products/lumen-brightening-cream",
+        link: "/product/thera-soil-body-emulsion",
     }, 
     {
         title: "moss bloom hair oil", 
         price: "$ 180.00",
         image: "/item3.png",
         bgImage: "/item3-hover.png",
-        link: "/products/moss-bloom-hair-oil",
+        link: "/product/moss-bloom-hair-oil",
     }, 
     {
         title: "aura veil facial cream",
         price: "$ 220.00",
         image: "/item4.png",
         bgImage: "/item4-hover.png",
-        link: "/products/lumen-brightening-cream",
+        link: "/product/aura-veil-facial-cream",
     }
 ] 
