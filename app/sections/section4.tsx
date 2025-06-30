@@ -36,7 +36,7 @@ export const Section4: React.FC = () => {
 <h1 className="bdog text-xs text-[rgb(35,25,22)] mt-[48px] uppercase  ">recommend</h1>
 <div className="flex flex-col items-center lg:gap-[20px]">
   <div className="relative h-[460px] w-full">
-<Image alt='' src="/item4.png" quality={30} height={460} width={460} className=" "></Image>
+<Image alt='' src="/item4.webp" quality={30} height={460} width={460} className=" "></Image>
 </div>
 <div className="flex flex-col items-center gap-[16px] ">
 <h1 className="prata1-1 text-[16px] text-center uppercase">aura veil facial cream</h1>
@@ -63,7 +63,7 @@ export const Section4: React.FC = () => {
 <h1 className="bdog2 text-xs text-[rgb(251,251,239)] mt-[48px]  ">FORMULA</h1>
 <p className="prata1-1 text-center text-[rgb(228,224,212)] text-[16px] mb-[48px]">Formed from volcanic ash, deep-layered spring<br></br> water, and wild herbs, our formula restores the<br></br> skin through purification, hydration, and calm — <br></br>in seamless harmony.</p>
 </div>
-<div className="relative aspect-[1/1.15] lg:aspect-[1/1.35] w-full"><Image alt="" src="/item4-hover-copy.webp"  sizes="(max-width: 768px) 100vw, 50vw" fill className=" object-cover"></Image></div>
+<div className="relative aspect-[1/1.15] lg:aspect-[1/1.35] w-full"><Image alt="" src="/item4-hover.webp"  sizes="(max-width: 768px) 100vw, 50vw" fill className=" object-cover"></Image></div>
 
 </div>
 
