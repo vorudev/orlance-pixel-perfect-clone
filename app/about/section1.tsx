@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Section1 = () => {
    const controls = useAnimation();
@@ -30,7 +31,7 @@ export const Section1 = () => {
     >
         <div className="h-[480px] w-full  md:h-[600px] relative">
 <div className="absolute w-full h-full overflow-hidden ">
-<img src="/bg-about.jpg" className="w-full h-full object-cover "></img>
+<Image alt="" sizes="100vw" fill src="/bg-about.webp" className="object-cover "></Image>
 </div>
 <div className="w-full relative  h-full flex pl-[20px] pb-[20px] flex-col gap-[16px] lg:gap-[24px] lg:pb-[24px] lg:pl-[24px] justify-end">
 <h1 className="prata3 uppercase text-[28px] md:text-[32px] lg:text-[40px] text-[rgb(228,224,212)]">from the sacred<br></br>soil of arca. </h1>

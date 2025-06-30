@@ -6,6 +6,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import Image from "next/image";
 interface CardProps {
     title: string;
     image: string;
@@ -17,10 +18,10 @@ const Section1CardProp: React.FC<CardProps> = ({ title, image, description, link
     return (
         <Link className="flex flex-col gap-[24px] lg:gap-[40px] w-full items-center  "
         href={link}>
-<div className="w-[180px] lg:w-[250px] overflow-hidden">
-    <img src={image}
-    className="max-w-[180px] lg:max-w-[250px] aspect-[1/1.40] object-cover ">
-    </img>
+<div className="w-[180px] lg:w-[250px] overflow-hidden relative">
+    <Image alt="Section Visual" width={250} height={250} src={image}
+    className=" aspect-[1/1.40] object-cover ">
+    </Image>
 </div>
 <div className="w-[260px] lg:w-[380px] md:w-[353px] flex-col flex gap-[16px] lg:gap-[24px] items-center">
     <h1 className="text-[20px] md:text-[24px] lg: prata7 uppercase text-center">

@@ -30,7 +30,7 @@ export const Section1 = () => {
         <div className="h-[480px] w-full relative md:h-[600px]">
             
             <div className="absolute w-full h-full">
-<Image src="/storebg.png" fill alt="storebg" className="object-cover"></Image>
+<Image src="/storebg.webp" fill sizes="100vw" alt="storebg" className="object-cover"></Image>
             </div>
             <div className="absolute w-full h-full bg-gradient-to-b from-black/20 via-black/20 to-black/20 "></div>
             <div className="relative z-1 flex flex-col w-full h-full pb-[20px] pl-[20px] lg:pl-[24px] lg:pb-[24px] pr-[40px] gap-[16px] lg:gap-[24px] justify-end ">

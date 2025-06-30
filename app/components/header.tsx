@@ -121,7 +121,7 @@ const handleMenuToggle = () => {
            <Image
             width={135}
             height={30}
-            src='/window.svg'
+            src='/window.webp'
             alt="Логотип"
             className=" cursor-pointer"
           />
@@ -157,7 +157,7 @@ const handleMenuToggle = () => {
         </div>
       </div>
 <div className="w-1/2  hidden lg:flex relative">
-<Image alt="" fill sizes="50vw" src="/bg-menu.png" className=" object-cover"></Image>
+<Image alt="" fill sizes="50vw" src="/bg-menu.webp" className=" object-cover"></Image>
 <div className="absolute  pb-[40px] bottom-0 flex  text-[rgb(228,224,212)] items-center justify-center  w-full "
 >
   <p className="prata5 text-[16px] max-w-[440px] text-center">Minerals left by volcanic ash, pure water flowing through layered earth, and wild botanicals nurtured in silence—each element is a product of time and nature’s refinement.</p>
@@ -338,7 +338,7 @@ variants={childVariants}>
           {/* Логотип по центру */}
           <Link href="/" className="h-[20px] w-auto absolute left-1/2 transform -translate-x-1/2">
           <img
-            src={scrolled ? '/brown.svg' : '/window.svg'}
+            src={scrolled ? '/brown.webp' : '/window.webp'}
             alt="Логотип"
             className="h-6 w-auto"
           />
@@ -366,7 +366,7 @@ variants={childVariants}>
         <div className="w-1/2 flex items-center gap-20">
         <Link href="/" className="cursor-pointer">
           <img
-            src={scrolled ? '/brown.svg' : '/window.svg'}
+            src={scrolled ? '/brown.webp' : '/window.webp'}
             alt="Логотип"
             className="h-6 w-auto "
           />

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { data } from "./data";
 import { Cards } from "../../sections/cards";
+import Image from "next/image";
 
 interface CardProps { 
     title: string;
@@ -23,10 +24,10 @@ return (
 </h1>
 
 <div className="flex flex-col items-center lg:justify-center h-full pb-[20px] lg:pb-0  lg:gap-[16px] gap-[8px] px-[40px] ">
-    <div className="flex justify-center items-center ">
-<img src={image} className="w-[460px] ">
+    <div className="flex justify-center items-center realative">
+<Image alt='' width={460} height={460} src={image} className=" ">
 
-</img>
+</Image>
 </div>
 <h1 className="uppercase  text-center prata1 lg:text-[16px] md:text-[15px] text-[14px] ">{title}</h1>
 <p className="md:text-xs text-[11px] bdog text-center ">
@@ -79,8 +80,8 @@ export const Section1Card = () => {
       link={data[index].link}
     />
 
-      <div className="w-full lg:w-1/2 ">
-        <img src="/grid1.png" className="aspect-[1/1.15] lg:aspect-[1/1.35] object-cover "></img>
+      <div className="w-full lg:w-1/2 relative">
+        <Image alt='' fill sizes="100vw" quality={80} src="/grid1.webp" className="aspect-[1/1.15] lg:aspect-[1/1.35] object-cover "></Image>
       </div>
 </div>
 <Cards />

@@ -52,10 +52,10 @@ export const Section4 = () => {
                 </div>
                 
                 <div className="grid lg:grid-cols-4  grid-cols-2 gap-[8px] lg:gap-[16px] ">
-<div className="overflow-hidden"><img src="/about-grid0.jpg" loading="lazy" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer "></img></div>
-<div className="overflow-hidden"><img src="/about-grid1.jpg" loading="lazy" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer"></img></div>
-<div className="overflow-hidden"><img src="/about-grid2.jpg" loading="lazy" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer"></img></div>
-<div className="overflow-hidden"><img src="/about-grid3.jpg" loading="lazy" className="aspect-square object-cover hover:scale-103 transition duration-300 cursor-pointer"></img></div>
+<div className="overflow-hidden"><img src="/about-grid0.webp" loading="lazy" className="aspect-square backface-hidden will-change-transform object-cover w-full hover:scale-103 transition duration-300 cursor-pointer "></img></div>
+<div className="overflow-hidden"><img src="/about-grid1.webp" loading="lazy" className="aspect-square backface-hidden will-change-transform object-cover w-full hover:scale-103 transition duration-300 cursor-pointer"></img></div>
+<div className="overflow-hidden"><img src="/about-grid2.webp" loading="lazy" className="aspect-square backface-hidden will-change-transform object-cover w-full hover:scale-103 transition duration-300 cursor-pointer"></img></div>
+<div className="overflow-hidden"><img src="/about-grid3.webp" loading="lazy" className="aspect-square backface-hidden will-change-transform object-cover w-full hover:scale-103 transition duration-300 cursor-pointer"></img></div>
                 </div>
                 </div>
                 
