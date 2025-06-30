@@ -40,7 +40,7 @@ const renderSectionContent = (sectionId: number) => {
     />
   </div>
   {/* Блок с текстом и иконками */}
-  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px]  lg:pb-0 lg:px-0 lg:pt-0">
+  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px] pb-[80px] lg:pb-0 lg:px-0 lg:pt-0">
     <h1 className="uppercase md:text-xs text-[11px] bdog text-center lg:mt-[48px]">material</h1>
     <div className="flex flex-col gap-[24px] lg:gap-[40px] items-center text-center mt-[24px] lg:mt-0">
       <h1 className="prata2  lg:text-[40px] md:text-[32px] text-[28px]  uppercase max-w-[360.875px] md:max-w-[412.422px]">
@@ -52,7 +52,7 @@ const renderSectionContent = (sectionId: number) => {
         natural balance.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 ">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[20px] lg:mb-[48px] ">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -114,7 +114,7 @@ const renderSectionContent = (sectionId: number) => {
     />
   </div>
   {/* Блок с текстом и иконками */}
-  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px]  lg:pb-0 lg:px-0 lg:pt-0">
+  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px] pb-[80px] lg:pb-0 lg:px-0 lg:pt-0">
     <h1 className="uppercase md:text-xs text-[11px] bdog text-center lg:mt-[48px]">material</h1>
     <div className="flex flex-col gap-[24px] lg:gap-[40px] items-center text-center mt-[24px] lg:mt-0">
       <h1 className="prata2  lg:text-[40px] md:text-[32px] text-[28px]  uppercase max-w-[360.875px] md:max-w-[412.422px]">
@@ -124,7 +124,7 @@ const renderSectionContent = (sectionId: number) => {
         Sourced from untouched highlands and forests, these wild herbs bring raw vitality, soothing the skin and protecting it from external stressors.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 ">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0  mb-[20px] lg:mb-[48px]">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -186,7 +186,7 @@ const renderSectionContent = (sectionId: number) => {
     />
   </div>
   {/* Блок с текстом и иконками */}
-  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px]  lg:pb-0 lg:px-0 lg:pt-0">
+  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px] pb-[80px] lg:pb-0 lg:px-0 lg:pt-0">
     <h1 className="uppercase md:text-xs text-[11px] bdog text-center lg:mt-[48px]">material</h1>
     <div className="flex flex-col gap-[24px] lg:gap-[40px] items-center text-center mt-[24px] lg:mt-0">
       <h1 className="prata2  lg:text-[40px] md:text-[32px] text-[28px]  uppercase max-w-[360.875px] md:max-w-[412.422px]">
@@ -196,7 +196,7 @@ const renderSectionContent = (sectionId: number) => {
         Filtered slowly through layers of earth, this spring water is naturally purified over centuries. It deeply hydrates and calms the skin with nature’s flow.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 ">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[20px] lg:mb-[48px] ">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -258,7 +258,7 @@ const renderSectionContent = (sectionId: number) => {
     />
   </div>
   {/* Блок с текстом и иконками */}
-  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px]  lg:pb-0 lg:px-0 lg:pt-0">
+  <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px] pb-[80px] lg:pb-0 lg:px-0 lg:pt-0">
     <h1 className="uppercase md:text-xs text-[11px] bdog text-center lg:mt-[48px]">material</h1>
     <div className="flex flex-col gap-[24px] lg:gap-[40px] items-center text-center mt-[24px] lg:mt-0">
       <h1 className="prata2  lg:text-[40px] md:text-[32px] text-[28px]  uppercase max-w-[360.875px] md:max-w-[412.422px]">
@@ -270,7 +270,7 @@ const renderSectionContent = (sectionId: number) => {
         natural balance.
       </p>
     </div>
-    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 ">
+    <div className="flex flex-row gap-4 mt-[36px] lg:mt-0 mb-[20px] lg:mb-[48px]">
       <div className="flex flex-col items-center">
         <div
           onClick={() => toggleSection(1)}
@@ -325,7 +325,7 @@ const renderSectionContent = (sectionId: number) => {
            
 };  }
     return ( 
-        <div className="bg-[rgb(251,251,239)]">
+        <div className="bg-[rgb(251,251,239)] ">
         <motion.div
       ref={ref}
       initial="hidden"

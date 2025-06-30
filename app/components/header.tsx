@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import React, { use } from "react";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useScrolled } from "./functions/scroll";
@@ -10,7 +10,7 @@ import { useCart } from '../contexts/CartContext';
 export const Header: React.FC = () => { 
    const scrolled = useScrolled(100);
       const [isVisible, setIsVisible] = useState(false);
-   const { cart, removeFromCart, clearCart, updateQuantity, distinctItems } = useCart();
+   const { cart, clearCart, distinctItems } = useCart();
        
         
      const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
       }, [controls, inView]);
     const headerRef = useRef<HTMLDivElement>(null);
     
-   const mobileNavRef = useRef<HTMLDivElement>(null);
+
 const handleMenuToggle = () => {
     setIsOpen(true)
     // Блокируем прокрутку

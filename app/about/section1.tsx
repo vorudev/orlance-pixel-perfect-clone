@@ -32,7 +32,7 @@ export const Section1 = () => {
 <div className="absolute w-full h-full overflow-hidden ">
 <img src="/bg-about.jpg" className="w-full h-full object-cover "></img>
 </div>
-<div className="w-full relative  h-full flex pl-[20px] pb-[20px] flex-col gap-[16px] justify-end">
+<div className="w-full relative  h-full flex pl-[20px] pb-[20px] flex-col gap-[16px] lg:gap-[24px] lg:pb-[24px] lg:pl-[24px] justify-end">
 <h1 className="prata3 uppercase text-[28px] md:text-[32px] lg:text-[40px] text-[rgb(228,224,212)]">from the sacred<br></br>soil of arca. </h1>
 <Link href="/shop" className="uppercase md:text-xs text-[11px] bdog flex-row flex items-center justify-start gap-2 cursor-pointer  group">
     VIEW more <div className={`w-[24px] h-[24px]  items-center  justify-center  border  rounded-full border-[rgb(228,224,212)] flex overflow-hidden cursor-pointer` }> 

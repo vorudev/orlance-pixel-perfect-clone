@@ -55,11 +55,11 @@ export const Section5: React.FC = () => {
                 <div className="grid lg:grid-cols-4  grid-cols-2 gap-[8px] lg:gap-[16px] ">
 <Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative  "><img src="/grid1web.webp"  loading="lazy" alt="" className="aspect-square object-cover will-change-transform
  hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
-<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative"><img  alt="" loading="lazy" src="/grid2web.webp" className="aspect-square object-cover will-change-transform
+<Link href="/the-earth-beneath-our-skin/light-captured-in-a-bottle" className="overflow-hidden relative"><img  alt="" loading="lazy" src="/grid2web.webp" className="aspect-square object-cover will-change-transform
 hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
-<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative"><img src="/grid3.jpg" loading="lazy"  alt="" className="aspect-square object-cover will-change-transform
+<Link href="/the-earth-beneath-our-skin/daily-rituals-sacred-moments" className="overflow-hidden relative"><img src="/grid3.jpg" loading="lazy"  alt="" className="aspect-square object-cover will-change-transform
 hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
-<Link href="/the-earth-beneath-our-skin/the-earth-beneath-our-skin" className="overflow-hidden relative"><img  alt="" src="/grid4web.webp" loading="lazy" className="aspect-square object-cover will-change-transform
+<Link href="/the-earth-beneath-our-skin/under-the-moss-a-memory" className="overflow-hidden relative"><img  alt="" src="/grid4web.webp" loading="lazy" className="aspect-square object-cover will-change-transform
 hover:scale-103 backface-hidden transition duration-500 cursor-pointer  translate-z-0"></img></Link>
                 </div>
                 </div>

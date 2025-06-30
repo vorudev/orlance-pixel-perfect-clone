@@ -32,7 +32,7 @@ export const Section4: React.FC = () => {
     >
         <div className="flex lg:flex-row w-full  flex-col-reverse bg-[rgb(251,251,239)] text-[rgb(35,25,22)]">
           
-<Link className="lg:flex  hidden  w-1/2  flex-col gap-[20px] items-center justify-between" href="/item4">
+<Link className="lg:flex  hidden  w-1/2  flex-col gap-[20px] items-center justify-between" href="/product/aura-veil-facial-cream">
 <h1 className="bdog text-xs text-[rgb(35,25,22)] mt-[48px] uppercase  ">recommend</h1>
 <div className="flex flex-col items-center lg:gap-[20px]">
 <img src="/item4.png " className="h-[460px] w-auto"></img>
