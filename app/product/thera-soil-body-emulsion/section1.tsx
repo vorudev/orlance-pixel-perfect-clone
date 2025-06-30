@@ -47,7 +47,7 @@ export const Section1Item = () => {
 <p className="text-[13px] lg:text-[14px] lg:text-center  prata6 ">
 A body emulsion infused with the warmth of the earth—moisturizing and grounding like freshly turned soil.
 </p>
-<p className="uppercase text-[11px] md:text-xs bdog1 ">$ {product.price} usd</p>
+<p className="uppercase text-[11px] md:text-xs bdog2 ">$ {product.price} usd</p>
             </div>
            <button className={`bg-[rgb(35,25,22)] text-[rgb(251,251,239)] w-full h-[48px] bdog text-[12px] uppercase  ${isInCart ? "" : "cursor-pointer"
            }`}   onClick={() => addToCart(product)}

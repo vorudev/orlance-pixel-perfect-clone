@@ -6,6 +6,7 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import CartItemComponent from "./cartprop";
 import { useInView } from "react-intersection-observer";
 import { useCart } from '../contexts/CartContext';
+import Image from "next/image";
 export const Header: React.FC = () => { 
   const [isVisible, setIsVisible] = useState(false);
        const { cart, clearCart, distinctItems } = useCart();
@@ -153,7 +154,7 @@ const handleMenuToggle = () => {
         </div>
       </div>
 <div className="w-1/2  hidden lg:flex relative">
-<img src="/bg-menu.png" className="w-full h-full object-cover"></img>
+<Image alt="" fill sizes="(max-width: 1024px) 1vw, 50vw" src="/bg-menu.webp" className=" object-cover"></Image>
 <div className="absolute  pb-[40px] bottom-0 flex  text-[rgb(228,224,212)] items-center justify-center  w-full "
 >
   <p className="prata5 text-[16px] max-w-[440px] text-center">Minerals left by volcanic ash, pure water flowing through layered earth, and wild botanicals nurtured in silence—each element is a product of time and nature’s refinement.</p>
@@ -262,7 +263,18 @@ variants={childVariants}>
          </motion.div>
         )}
         </AnimatePresence>
-         <div className={`fixed z-15  w-full h-screen  ${isVisible ? 'fixed' : 'hidden'}`}>
+        <AnimatePresence>
+                {isVisible && (
+                  <motion.div
+                   initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={menuVariants}
+                    transition={{ duration: 0.3 }}
+                    style={{ position: 'fixed' }}
+                    className="w-full h-screen z-16"
+                  >
+         <div className={`z-15  w-full h-screen  `}>
                      <div className="w-full h-full bg-black/50 flex justify-end" onClick={handleToggleCart}>
          <div className=" lg:w-[480px]  w-full h-full bg-[rgb(251,251,239)] text-[rgb(35,25,22)] " onClick={(e) => e.stopPropagation()}>
          <div className="pb-[16px] lg:px-[16px] px-[20px] h-full relative ">
@@ -305,6 +317,9 @@ variants={childVariants}>
                      
          
                   </div>
+                  </motion.div>
+                )}
+                </AnimatePresence>
       {/* Мобильная версия хедера: до lg */}
       <div
         
@@ -334,7 +349,7 @@ variants={childVariants}>
           {/* Логотип по центру */}
           <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 h-[20px] w-auto ">
           <img
-            src='/brown.svg' 
+            src='/brown.webp' 
             alt="Логотип"
             className="h-[20px] w-auto "
           />

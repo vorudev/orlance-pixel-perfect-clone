@@ -266,7 +266,18 @@ variants={childVariants}>
          </motion.div>
         )}
         </AnimatePresence>
-         <div className={`fixed z-15  w-full h-screen  ${isVisible ? 'fixed' : 'hidden'}`}>
+        <AnimatePresence>
+                        {isVisible && (
+                          <motion.div
+                           initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={menuVariants}
+                            transition={{ duration: 0.3 }}
+                            style={{ position: 'fixed' }}
+                            className="w-full h-screen z-16"
+                          >
+         <div className={` z-15  w-full h-screen `}>
                      <div className="w-full h-full bg-black/50 flex justify-end" onClick={handleToggleCart}>
          <div className=" lg:w-[480px]  w-full h-full bg-[rgb(251,251,239)] text-[rgb(35,25,22)] " onClick={(e) => e.stopPropagation()}>
          <div className="pb-[16px] lg:px-[16px] px-[20px] h-full relative ">
@@ -309,6 +320,9 @@ variants={childVariants}>
                      
          
                   </div>
+                  </motion.div>
+                        )}
+                      </AnimatePresence>
       {/* Мобильная версия хедера: до lg */}
       <div
         

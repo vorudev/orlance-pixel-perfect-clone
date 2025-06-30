@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+   metadataBase: new URL('https://orlance.vercel.app/'),
   title: "Orlance",
   description: "Orlance template pixel-perfect copy",
   icons: {
