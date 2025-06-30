@@ -321,11 +321,7 @@ variants={childVariants}>
                 border-[rgb(35,25,22)]
                 `}
               >
-                <img
-                  src="https://cdn.prod.website-files.com/6822f8342a36484c66267e9a/6835a60e41ac5ec8f3534042_menu.svg"
-                  alt="Menu Icon"
-                  className="h-[12px] w-[12px]"
-                />
+                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill='#232522'><path d="M160-360v-80h640v80H160Zm0-160v-80h640v80H160Z"/></svg>
               </div>
               <a
                 className={`cursor-pointer bdog uppercase md:text-xs text-[11px] 
