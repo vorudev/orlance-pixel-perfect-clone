@@ -22,7 +22,7 @@ export const Section1Item = () => {
     id: 3,
     name: "moss bloom hair oil",
     price: 180.00,
-    image: "/item3.png",
+    image: "/item3web.webp",
   };
         const isInCart = cart.some((item) => item.id === product.id);
         

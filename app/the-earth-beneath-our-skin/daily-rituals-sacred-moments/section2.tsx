@@ -35,7 +35,7 @@ export const Section2grid = () => {
 <p className="prata10 text-[14px] md:text-[15px] lg:text-[14px] text-[rgb(51,51,51)] ">Bloom Hair Oil was designed for these intimate rituals. It’s not about transformation—it’s about contact, about attention. The oil carries a soft fragrance: something green, something citrus, something like memory. It smooths, yes—but more than that, it centers. When I use it, I feel like I’m offering care to more than just my hair. It’s a way of making time visible, of seeing myself as worth the moment.</p>
 </div>
 <div className="relative w-full max-w-[560px] max-h-[840px] lg:max-w-[600px] lg:max-h-[900px]  aspect-[1/1.5]  ">
-<Image alt="" fill src="/item2-hoverweb.webp" className="  max-w-[560px] max-h-[840px] lg:max-w-[600px] lg:max-h-[900px] aspect-auto object-cover"></Image>
+<Image alt="" fill src="/item2-hoverfull.webp" className="  max-w-[560px] max-h-[840px] lg:max-w-[600px] lg:max-h-[900px] aspect-auto object-cover"></Image>
 </div>
 <div>
     <p className="prata10 text-[14px] md:text-[15px] lg:text-[14px] text-[rgb(51,51,51)]" >These rituals become sacred not because they are grand, but because they are yours. With each use, I come back into rhythm. The oil doesn’t just shine—it hums. It speaks in texture, in patience, in the slow unfolding of routine. Over time, your hair becomes healthier. But more importantly, you begin to associate your reflection with care. With effort. With calm. And that changes everything.</p>

@@ -22,7 +22,7 @@ export const Section1Item = () => {
     id: 2,
     name: "aura veil facial cream",
     price: 220.00,
-    image: "/item4.png",
+    image: "/item4.webp",
   };
         const isInCart = cart.some((item) => item.id === product.id);
         

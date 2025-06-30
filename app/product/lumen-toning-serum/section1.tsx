@@ -22,7 +22,7 @@ export const Section1Item = () => {
     id: 1,
     name: "lumen toning serum",
     price: 140.00,
-    image: "/item1.png",
+    image: "/item1web.webp",
   };
         const isInCart = cart.some((item) => item.id === product.id);
         

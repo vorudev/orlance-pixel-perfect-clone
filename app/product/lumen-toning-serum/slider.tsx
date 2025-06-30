@@ -66,14 +66,14 @@ export const ImageSlider: React.FC = () => {
       >
         <SwiperSlide>
           <img
-            src="/item1.png"
+            src="/item1web.webp"
             alt="Фото 1"
             className="w-full h-full  aspect-[1/1.15] lg:aspect-[1/1.35] object-cover"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="/item1-hover.png"
+            src="/item1-hoverfull.webp"
             alt="Фото 2"
             className="w-full h-full  aspect-[1/1.15] lg:aspect-[1/1.35] object-cover"
           />

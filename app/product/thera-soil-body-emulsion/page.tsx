@@ -5,7 +5,7 @@ import { Section1Item  } from "./section1";
 import { Section1Full  } from "./section1-included";
 import { Section2Item } from "./section2";
 import { Section3Item } from "./section3";
-import { CardsItem } from "./cardsitems";
+import { Cards } from "../lumen-toning-serum/cardsitems";
 import { Footer } from "@/app/components/footer";
 
 export default function LumenToningSerum() {
@@ -16,7 +16,7 @@ export default function LumenToningSerum() {
 <Section1Full />
 <Section2Item />
 <Section3Item />
-<CardsItem />
+<Cards />
 <Footer />
 
        </div>

@@ -47,7 +47,7 @@ export const Section1grid = () => {
 
 </div>
 <div className="relative aspect-[1/1.15] w-full mt-[24px] lg:mt-0 lg:w-1/2 lg:aspect-auto">
-    <Image fill alt="" src="/grid3.jpg" className="aspect-[1/1.15] lg:aspect-auto object-cover "></Image>
+    <Image fill alt="" sizes="100vw" src="/grid3full.webp" className="aspect-[1/1.15] lg:aspect-auto object-cover "></Image>
 </div>
 </div>
         </div>
