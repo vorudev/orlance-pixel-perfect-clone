@@ -3,7 +3,7 @@ import { Header } from "./components/header";
 import { Hero } from "./sections/hero";
 import { Section2 } from "./sections/section2";
 import { Cards } from "./sections/cards";
-import { Section3 } from "./sections/section3";
+import { Section3Smart } from "./sections/section3-optimized";
 import { Section4 } from "./sections/section4";
 import { Section5 } from "./sections/section5";
 import { Footer } from "./components/footer";
@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <Section2 />
       <Cards />
-      <Section3 />
+      <Section3Smart />
       <Section4 />
       <Section5 />
       <Footer />

@@ -7,6 +7,7 @@ import { useScrolled } from "./functions/scroll";
 import { useInView } from "react-intersection-observer";
 import CartItemComponent from "./cartprop";
 import { useCart } from '../contexts/CartContext';
+import Image from "next/image";
 export const Header: React.FC = () => { 
    const scrolled = useScrolled(100);
       const [isVisible, setIsVisible] = useState(false);
@@ -117,10 +118,12 @@ const handleMenuToggle = () => {
         {/* Левая колонка с логотипом и навигацией */}
         <div className="w-1/2 flex items-center gap-20 ">
         <Link href='/' className="cursor-pointer">
-           <img
+           <Image
+            width={135}
+            height={30}
             src='/window.svg'
             alt="Логотип"
-            className="h-6 w-auto cursor-pointer"
+            className=" cursor-pointer"
           />
           </Link>
           
@@ -154,7 +157,7 @@ const handleMenuToggle = () => {
         </div>
       </div>
 <div className="w-1/2  hidden lg:flex relative">
-<img src="/bg-menu.png" className="w-full h-full object-cover"></img>
+<Image alt="" fill sizes="50vw" src="/bg-menu.png" className=" object-cover"></Image>
 <div className="absolute  pb-[40px] bottom-0 flex  text-[rgb(228,224,212)] items-center justify-center  w-full "
 >
   <p className="prata5 text-[16px] max-w-[440px] text-center">Minerals left by volcanic ash, pure water flowing through layered earth, and wild botanicals nurtured in silence—each element is a product of time and nature’s refinement.</p>
@@ -337,7 +340,7 @@ variants={childVariants}>
           <img
             src={scrolled ? '/brown.svg' : '/window.svg'}
             alt="Логотип"
-            className="h-[20px] w-auto"
+            className="h-6 w-auto"
           />
           </Link>
           {/* Корзина справа */}

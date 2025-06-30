@@ -2,7 +2,7 @@
 import React from "react"; 
 import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-
+import Image from "next/image";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -32,12 +32,12 @@ const renderSectionContent = (sectionId: number) => {
       return (
         <div className="flex flex-col lg:flex-row w-full bg-[rgb(251,251,239)] text-[rgb(35,25,22)]">
   {/* Блок с изображением */}
-  <div className="relative w-full lg:w-1/2">
-    <img
-      src="/section3.png"
+  <div className="relative w-full lg:w-1/2 aspect-[1/1.15] lg:aspect-[1/1.35]">
+    <Image fill 
+      src="/section3.webp"
       alt="Section Visual"
-      className="w-full h-auto aspect-[1/1.15] lg:aspect-[1/1.35] object-cover"
-    />
+      className="  object-cover"> 
+     </Image>
   </div>
   {/* Блок с текстом и иконками */}
   <div className="w-full lg:w-1/2 flex flex-col items-center justify-between px-[40px] pt-[40px] pb-[80px] lg:pb-0 lg:px-0 lg:pt-0">
@@ -58,9 +58,12 @@ const renderSectionContent = (sectionId: number) => {
           onClick={() => toggleSection(1)}
           className="rounded-full border border-black flex items-center justify-center md:w-[74px] md:h-[74px] h-[46px] w-[46px] cursor-pointer"
         >
-          <div className="rounded-full md:h-[64px] md:w-[64px] h-[40px] w-[40px] overflow-hidden">
-            <img
-              src="/section3.png"
+          <div className="rounded-full md:h-[64px] md:w-[64px] h-[40px] w-[40px] overflow-hidden relative">
+            <Image
+              src="/section3.webp"
+             
+              width={64}
+              height={64}
               alt="bark"
               className="rounded-full object-cover"
             />
@@ -73,9 +76,11 @@ const renderSectionContent = (sectionId: number) => {
           onClick={() => toggleSection(2)}
           className="rounded-full flex items-center justify-center md:w-[74px] md:h-[74px] h-[46px] w-[46px] cursor-pointer"
         >
-          <div className="rounded-full md:h-[64px] md:w-[64px] h-[40px] w-[40px] overflow-hidden">
-            <img
-              src="/section3-2.png"
+          <div className="rounded-full md:h-[64px] md:w-[64px] h-[40px] w-[40px] overflow-hidden relative">
+            <Image
+              src="/section3-2.webp"
+              width={64}
+              height={64}
               alt="soil"
               className="rounded-full object-cover"
             />
@@ -88,9 +93,11 @@ const renderSectionContent = (sectionId: number) => {
           onClick={() => toggleSection(3)}
           className="rounded-full flex items-center justify-center md:w-[74px] md:h-[74px] h-[46px] w-[46px] cursor-pointer"
         >
-          <div className="rounded-full md:h-[64px] md:w-[64px] h-[40px] w-[40px] overflow-hidden">
-            <img
-              src="/section3-3.png"
+          <div className="rounded-full md:h-[64px] md:w-[64px] h-[40px] w-[40px] overflow-hidden relative">
+            <Image
+              src="/section3-3.webp"
+              width={64}
+              height={64}
               alt="ore"
               className="rounded-full object-cover"
             />
@@ -106,11 +113,12 @@ const renderSectionContent = (sectionId: number) => {
       return (
         <div className="flex flex-col lg:flex-row w-full bg-[rgb(251,251,239)] text-[rgb(35,25,22)]">
   {/* Блок с изображением */}
-  <div className="relative w-full lg:w-1/2">
-    <img
-      src="/section3-2.png"
+  <div className="relative w-full lg:w-1/2 aspect-[1/1.15] lg:aspect-[1/1.35] ">
+    <Image
+      fill
+      src="/section3-2.webp"
       alt="Section Visual"
-      className="w-full h-auto aspect-[1/1.15] lg:aspect-[1/1.35] object-cover"
+      className=" object-cover"
     />
   </div>
   {/* Блок с текстом и иконками */}

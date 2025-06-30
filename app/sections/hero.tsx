@@ -31,7 +31,7 @@ export const Hero: react.FC = () => {
     >
         <div className="flex flex-col lg:hidden w-full h-screen relative  bg-[rgb(251,251,239)] text-[rgb(35,25,22)]">
           <div className="h-screen w-full absolute">
-<Image src="/bg.png" alt="bg" fill className=" h-screen w-full object-cover "></Image>
+<Image src="/bgweb.webp" sizes="(max-width: 1024px) 100vw, 1vw" blurDataURL="/bgweb.webp" placeholder="blur" alt="bg" fill className=" h-screen w-full object-cover "></Image>
 </div>
 <div className="absolute w-full h-1/2 bg-gradient-to-b from-black/50 via-black/0 to-black/0 "></div>
 <div className="relative w-full h-full flex justify-center items-center flex-col gap-[16px] pt-[54px] pb-[40px]">
@@ -49,16 +49,16 @@ soil of Arca</h1>
 <div className="absolute  left-[24px] bottom-[24px] flex items-end justify-start text-white z-2">
 <h1 className="bdog2 text-xs text-[#fff6] tracking-wider">© ORLANCE 2025</h1>
 </div>
-<img src="/bg.png" className=" h-screen w-full object-cover "></img>
+<Image fill alt=''sizes="(max-width: 1024px) 1vw, 50vw" src="/bgweb.webp" className=" h-screen w-full object-cover "></Image>
 
 </div>
 <div className="w-1/2 h-full relative ">
 
-<img src="Screenshot_2.png" className="absolute w-full h-full ">
+ <Image fill alt='' sizes="(max-width: 768px) 100vw, 50vw" src="/Screenshot_2.webp" className="absolute w-full h-full ">
 
-</img>
+</Image>
 <div className="flex flex-col items-center justify-between pt-[54px] relative w-full h-full  pb-[40px]">
-<img src="symbol.svg" className="h-[54px] max-w-[100%]"></img>
+<img alt="symbol" src="/symbol.svg" loading="lazy" className="h-[54px] max-w-[100%]"></img>
 <div className="flex-col flex items-center justify-center text-[rgb(228, 224, 212)] w-full h-full gap-[24px]">
 <h1 className="uppercase text-xs text-[rgb(228, 224, 212)] bdog2">into ritual</h1>
 <h1 className="uppercase text-[40px] text-[rgb(228, 224, 212)] prata text-center  ">from the sacred<br></br>
