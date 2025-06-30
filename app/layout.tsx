@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Orlance",
   description: "Orlance template pixel-perfect copy",
+  icons: {
+    apple: "/appicon.png",
+  },
 openGraph: {
   title: "Orlance",
   description: "Orlance template pixel-perfect copy",
