@@ -1,9 +1,13 @@
 # Pixel-Perfect Clone of Orlance Webflow template
 
- A 1:1, pixel-perfect reimplementation of the Orlance template by STUDIOP DIGITAL DESIGN
- All design and assets remain © STUDIOP DIGITAL DESIGN and are used here only for demonstration.
- This repository contains no proprietary code—only my recreation in Next.js, React, Tailwind, TypeScript, with bugfixes.
-[Live Demo](https://orlance.vercel.app)
+ A 1:1, pixel-perfect clone of the Orlance template by STUDIOP DIGITAL DESIGN
+All design and assets remain © STUDIOP DIGITAL DESIGN and are used here only for demonstration.
+
+
+## Visit [Live Demo](https://orlance.vercel.app) to see it
+
+https://orlance.vercel.app
+
 
 
 ![DEMO](./public/demo.png)
@@ -23,8 +27,18 @@ Images slider using Swiper.js
 
 Bugfixes of original template, more about that below
 
-## Visit [Live Demo](https://orlance.vercel.app) to see it
 
+
+## Tech Stack
+
+- Next.js  
+- React  
+- TypeScript  
+- Tailwind CSS  
+- Framer Motion  
+- Swiper.js  
+
+![DEMO](./public/demo2.png)
 ## Bug Fixes & Improvements
 
  **Fixed product-card grid layout breaking**
@@ -42,4 +56,4 @@ Bugfixes of original template, more about that below
 **Fixed inconsistent cart item count across different headers.**
 One header was displaying the number of distinct items, the other the total quantity
 
-> Unified all headers to display distinct items
+> Unified all headers cart buttons to display distinct items
