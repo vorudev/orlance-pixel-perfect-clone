@@ -9,43 +9,38 @@ type CartItemProps = {
 
 export const CartItemComponent = ({ item }: CartItemProps) => {
   const { updateQuantity, removeFromCart } = useCart();
-  // локальный стейт — только для поля ввода
+
   const [inputValue, setInputValue] = useState(item.quantity.toString());
 
-  // 1) Синхронизация пропса → локальный стейт
-  //    Если где-то снаружи количество поменялось (add/remove),
-  //    мы автоматически обновим поле ввода.
+
   useEffect(() => {
     setInputValue(item.quantity.toString());
   }, [item.quantity]);
 
-  // 2) Контролируем ввод — только цифры или пустая строка
+
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
-    // разрешаем либо пустую строку (пользователь ещё не дописал),
-    // либо только цифры от 0 до 9
+
     if (/^\d*$/.test(val)) {
       setInputValue(val);
     }
   }, []);
 
-  // 3) Финальная валидация на blur (потеря фокуса)
+
   const handleBlur = useCallback(() => {
     const trimmed = inputValue.trim();
 
-    // 3.1. Если решили стереть всё или ввели “0” → удаляем товар
+  
     if (trimmed === '' || trimmed === '0') {
       removeFromCart(item.id);
       return;
     }
 
-    // 3.2. Парсим строгое целое
+
     const parsed = Number(trimmed);
     if (Number.isInteger(parsed) && parsed > 0) {
       updateQuantity(item.id, parsed);
     } else {
-      // 3.3. Некорректное (буквы, “3.5” и т.п.) —
-      //      сбрасываем ввод к последнему валидному значению
       setInputValue(item.quantity.toString());
     }
   }, [
@@ -56,7 +51,7 @@ export const CartItemComponent = ({ item }: CartItemProps) => {
     removeFromCart
   ]);
 
-  // 4) Нажали Enter → “симулируем” blur
+
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter") {
