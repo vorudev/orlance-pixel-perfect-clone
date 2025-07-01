@@ -4,7 +4,10 @@
  All design and assets remain © STUDIOP DIGITAL DESIGN and are used here only for demonstration.
  This repository contains no proprietary code—only my recreation in Next.js, React, Tailwind, TypeScript, with bugfixes.
 [Live Demo](https://orlance.vercel.app)
+
+
 ![DEMO](./public/demo.png)
+
 ## Features
 13-page, pixel-perfect website built with Next.js, React and Typesctipt
 
