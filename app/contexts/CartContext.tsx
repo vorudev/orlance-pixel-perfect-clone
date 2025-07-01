@@ -102,7 +102,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     });
   }, []);
 
-  const clearCart = useCallback(() => setCart([]), []);
+  const clearCart = useCallback(() => setCart([]), []); 
 
 
   const totalItems = useMemo(
