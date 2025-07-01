@@ -95,4 +95,4 @@ export const CartItemComponent = ({ item }: CartItemProps) => {
   );
 };
 
-export default CartItemComponent;
+export default CartItemComponent; 
