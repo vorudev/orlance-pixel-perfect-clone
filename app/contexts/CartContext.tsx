@@ -43,9 +43,7 @@ interface Props {
   children: ReactNode;
 }
 
-/**
- * Ленивая загрузка из localStorage (SSR-безопасно).
- */
+
 function loadCart(): CartItem[] {
   if (typeof window === 'undefined') {
     return [];
@@ -60,10 +58,10 @@ function loadCart(): CartItem[] {
 }
 
 export const CartProvider: React.FC<Props> = ({ children }) => {
-  // 1) Инициализируемся из localStorage один раз
+
   const [cart, setCart] = useState<CartItem[]>(() => loadCart());
 
-  // 2) Сохраняем изменения в localStorage
+
   useEffect(() => {
     try {
       localStorage.setItem('cart', JSON.stringify(cart));
@@ -72,7 +70,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     }
   }, [cart]);
 
-  // 3) CRUD-операции над корзиной
+
   const removeFromCart = useCallback((id: number) => {
     setCart(prev => prev.filter(item => item.id !== id));
   }, []);
@@ -106,7 +104,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
 
   const clearCart = useCallback(() => setCart([]), []);
 
-  // 4) Вычисляем вспомогательные данные
+
   const totalItems = useMemo(
     () => cart.reduce((sum, { quantity }) => sum + quantity, 0),
     [cart]
@@ -117,7 +115,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   );
   const distinctItems = useMemo(() => cart.length, [cart]);
 
-  // 5) Мемозируем контекст-вейл
+
   const value = useMemo(
     () => ({
       cart,
