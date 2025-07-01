@@ -80,8 +80,8 @@ export const Section1Card = () => {
       link={data[index].link}
     />
 
-      <div className="w-full lg:w-1/2 relative">
-        <Image alt='' fill sizes="100vw" quality={80} src="/grid1.webp" className="aspect-[1/1.15] lg:aspect-[1/1.35] object-cover "></Image>
+      <div className="w-full lg:w-1/2 relative aspect-[1/1.15] lg:aspect-[1/1.35]">
+        <Image alt='' fill sizes="100vw" quality={80} src="/grid1.webp" className=" object-cover "></Image>
       </div>
 </div>
 <Cards />
