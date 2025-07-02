@@ -83,10 +83,10 @@ const handleMenuToggle = () => {
       >
         <div className="flex items-center justify-between">
           {/* Кнопка меню слева */}
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2" onClick={handleMenuClose}>
               
               <div
-                onClick={handleMenuClose}
+                
                 className={`w-[24px] h-[24px] flex items-center justify-center  border rounded-full 
                    border-[rgb(35,25,22)] 
                 `}

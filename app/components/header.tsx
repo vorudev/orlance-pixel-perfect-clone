@@ -7,6 +7,7 @@ import { useScrolled } from "./functions/scroll";
 import { useInView } from "react-intersection-observer";
 import CartItemComponent from "./cartprop";
 import { useCart } from '../contexts/CartContext';
+
 import Image from "next/image";
 export const Header: React.FC = () => { 
    const scrolled = useScrolled(100);
@@ -82,10 +83,11 @@ const handleMenuToggle = () => {
       >
         <div className="flex items-center justify-between">
           {/* Кнопка меню слева */}
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2"
+          onClick={handleMenuClose}>
               
               <div
-                onClick={handleMenuClose}
+                
                 className={`w-[24px] h-[24px] flex items-center justify-center  border rounded-full 
                    border-[rgb(35,25,22)] 
                 `}
@@ -352,8 +354,9 @@ variants={childVariants}>
           {/* Логотип по центру */}
           <Link href="/" className="h-[20px] w-auto absolute left-1/2 transform -translate-x-1/2">
           <img
-            src={scrolled ? '/brown.webp' : '/window.webp'}
+             src={scrolled ? '/brown.webp' : '/window.webp'}
             alt="Логотип"
+            
             className="h-6 w-auto"
           />
           </Link>
