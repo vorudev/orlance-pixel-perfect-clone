@@ -1,59 +1,58 @@
-# Pixel-Perfect Clone of Orlance Webflow template
+# Pixel-Perfect клон шаблона Orlance Webflow
 
- A 1:1, pixel-perfect clone of the Orlance template by STUDIOP DIGITAL DESIGN
-All design and assets remain © STUDIOP DIGITAL DESIGN and are used here only for demonstration.
+1:1, пиксель-перфект клон шаблона **Orlance** от **STUDIOP DIGITAL DESIGN**.
+Весь дизайн и ассеты остаются © **STUDIOP DIGITAL DESIGN** и используются здесь исключительно в демонстрационных целях.
 
+## Посетите [Live Demo](https://orlance.vercel.app), чтобы посмотреть
 
-## Visit [Live Demo](https://orlance.vercel.app) to see it
-
-https://orlance.vercel.app
-
-
+[https://orlance.vercel.app](https://orlance.vercel.app)
 
 ![DEMO](./public/demo.png)
 
-## Features
-13-page, pixel-perfect website built with Next.js, React and Typesctipt
+## Возможности
 
-Fully functional shopping cart using React Context, custom hooks, and localStorage (SSR-safe)
+13-страничный, пиксель-перфект сайт, созданный с использованием **Next.js**, **React** и **TypeScript**
 
-Smooth animations using Framer Motion
+Полностью функциональная корзина покупок с использованием **React Context**, кастомных хуков и **localStorage** (SSR-safe)
 
-image optimization with Next.js <code> < Image ></code> for better performance
+Плавные анимации с помощью **Framer Motion**
 
-Dynamic product-card generation from a data array via props and Array.prototype.map
+Оптимизация изображений с использованием **Next.js** `<Image>` для лучшей производительности
 
-Images slider using Swiper.js
+Динамическая генерация карточек товаров из массива данных через props и `Array.prototype.map`
 
-Bugfixes of original template, more about that below
+Слайдер изображений с использованием **Swiper.js**
 
+Исправления багов оригинального шаблона — подробнее ниже
 
+## Технологический стек
 
-## Tech Stack
-
-- Next.js  
-- React  
-- TypeScript  
-- Tailwind CSS  
-- Framer Motion  
-- Swiper.js  
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Swiper.js
 
 ![DEMO](./public/demo2.png)
-## Bug Fixes & Improvements
 
- **Fixed product-card grid layout breaking**
-   
-> Added h-full to every card element, applied <Code> grid-auto-rows:minmax(0,1fr) </code> to the grid container
+## Исправления багов и улучшения
 
-**Fixed hover state only activating on the image, not the entire product card**
+**Исправлено «ломание» сетки карточек товаров**
 
-> Wrapped the card link in a group container, gave image group-hover:
+> Добавлен `h-full` ко всем элементам карточек, применён
+> `<Code>grid-auto-rows: minmax(0, 1fr)</Code>` к контейнеру сетки
 
-**Fixed "Read Next" navigation (1→2, 2→3 , 3→1 , 4→1)**
+**Исправлено срабатывание hover-состояния только на изображении, а не на всей карточке товара**
 
-> Third article now links to the fourth (1→2→3→4→1), closing the loop properly.
+> Ссылка карточки обёрнута в контейнер `group`, изображению добавлен `group-hover`
 
-**Fixed inconsistent cart item count across different headers.**
-One header was displaying the number of distinct items, the other the total quantity
+**Исправлена навигация «Read Next» (1→2, 2→3, 3→1, 4→1)**
+
+> Третья статья теперь ведёт к четвёртой (1→2→3→4→1), корректно замыкая цикл.
+
+**Исправлено несоответствие количества товаров в корзине в разных хедерах**
+
+> Один хедер отображал количество уникальных позиций, другой — общее количество товаров
 
 > Unified all headers cart buttons to display distinct items
